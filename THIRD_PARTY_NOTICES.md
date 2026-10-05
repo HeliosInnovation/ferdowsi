@@ -1,6 +1,6 @@
 # Third-party notices
 
-persian-kit ports code from [hazm](https://github.com/roshan-research/hazm) (commit a399c82), under the following license:
+ferdowsi ports code from [hazm](https://github.com/roshan-research/hazm) (commit a399c82), under the following license:
 
 ```
 The MIT License (MIT)

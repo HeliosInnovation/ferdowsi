@@ -1,4 +1,6 @@
-# persian-kit
+# ferdowsi
+
+Named after Ferdowsi (فردوسی), the poet whose _Shahnameh_ helped preserve the Persian language.
 
 Tree-shakeable, zero-dependency helpers for working with Persian (Farsi) text, numbers and more. Works in any JavaScript runtime: Node, browsers, Deno, Bun, React, Vue and so on.
 
@@ -9,26 +11,26 @@ Tree-shakeable, zero-dependency helpers for working with Persian (Farsi) text, n
 ## Install
 
 ```sh
-pnpm add persian-kit
-# npm i persian-kit / yarn add persian-kit / bun add persian-kit
+pnpm add ferdowsi
+# npm i ferdowsi / yarn add ferdowsi / bun add ferdowsi
 ```
 
 ## Modules
 
 Import from the root or from a module's own entry point. Both are tree-shakeable.
 
-| Module                                            | Import                      | What it does                                                  |
-| ------------------------------------------------- | --------------------------- | ------------------------------------------------------------- |
-| [normalization](src/modules/normalization#readme) | `persian-kit/normalization` | Normalize text: characters, spacing, ZWNJ, digits, diacritics |
-| [tokenization](src/modules/tokenization#readme)   | `persian-kit/tokenization`  | Split text into words and punctuation                         |
-| [conjugation](src/modules/conjugation#readme)     | `persian-kit/conjugation`   | Conjugate a verb in every tense                               |
+| Module                                            | Import                   | What it does                                                  |
+| ------------------------------------------------- | ------------------------ | ------------------------------------------------------------- |
+| [normalization](src/modules/normalization#readme) | `ferdowsi/normalization` | Normalize text: characters, spacing, ZWNJ, digits, diacritics |
+| [tokenization](src/modules/tokenization#readme)   | `ferdowsi/tokenization`  | Split text into words and punctuation                         |
+| [conjugation](src/modules/conjugation#readme)     | `ferdowsi/conjugation`   | Conjugate a verb in every tense                               |
 
 The modules are TypeScript ports of parts of [hazm](https://github.com/roshan-research/hazm) that need no word dictionary, with output identical to hazm's for those parts. Each module's README notes where it differs from hazm's defaults.
 
 ## Usage
 
 ```ts
-import { normalize } from 'persian-kit/normalization';
+import { normalize } from 'ferdowsi/normalization';
 
 normalize('اِعلام کَرد : « زمین لرزه ای به بُزرگیِ 6 دهم ریشتر ...»');
 // → 'اعلام کرد: «زمین لرزه‌ای به بزرگی ۶ دهم ریشتر …»'
@@ -85,7 +87,7 @@ Files and folders are kebab-case, functions are arrow functions with block bodie
 
 Merging to `main` runs `.github/workflows/release.yml`, which needs this one-time setup in the GitHub repo:
 
-- `NPM_TOKEN` secret: an npm granular access token with read and write access to `persian-kit` and _Bypass two-factor authentication_ enabled.
+- `NPM_TOKEN` secret: an npm granular access token with read and write access to `ferdowsi` and _Bypass two-factor authentication_ enabled.
 - _Settings → Actions → General → Workflow permissions_: allow GitHub Actions to create and approve pull requests, so the workflow can open the release PR.
 
 The release PR is opened with the built-in `GITHUB_TOKEN`, so CI doesn't run on it; it only changes the version and changelog of commits that already passed CI on `main`.

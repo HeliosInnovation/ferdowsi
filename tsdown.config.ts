@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-  // Every `src/modules/<module>/index.ts` becomes a public subpath export (`persian-kit/<module>`).
+  // Every `src/modules/<module>/index.ts` becomes a public subpath export (`ferdowsi/<module>`).
   entry: ['src/index.ts', 'src/modules/*/index.ts'],
   format: ['esm', 'cjs'],
   platform: 'neutral',

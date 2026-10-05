@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "HeliosInnovation/persian-kit" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "HeliosInnovation/ferdowsi" }],
   "commit": false,
   "fixed": [],
   "linked": [],

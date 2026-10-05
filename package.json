@@ -1,8 +1,9 @@
 {
-  "name": "persian-kit",
+  "name": "ferdowsi",
   "version": "0.1.0",
   "description": "Tree-shakeable, zero-dependency helpers for Persian (Farsi) text: hazm-compatible normalization, tokenization, verb conjugation and more.",
   "keywords": [
+    "ferdowsi",
     "persian",
     "farsi",
     "iran",
@@ -13,13 +14,13 @@
     "i18n",
     "utils"
   ],
-  "homepage": "https://github.com/HeliosInnovation/persian-kit#readme",
+  "homepage": "https://github.com/HeliosInnovation/ferdowsi#readme",
   "bugs": {
-    "url": "https://github.com/HeliosInnovation/persian-kit/issues"
+    "url": "https://github.com/HeliosInnovation/ferdowsi/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HeliosInnovation/persian-kit.git"
+    "url": "git+https://github.com/HeliosInnovation/ferdowsi.git"
   },
   "license": "MIT",
   "author": "Helios Innovation (https://github.com/HeliosInnovation)",

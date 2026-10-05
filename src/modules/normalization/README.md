@@ -5,7 +5,7 @@ Normalizes Persian text: unifies Arabic letters, fixes spacing and ZWNJs (نیم
 ## Import
 
 ```ts
-import { normalize } from 'persian-kit/normalization';
+import { normalize } from 'ferdowsi/normalization';
 ```
 
 ## Usage

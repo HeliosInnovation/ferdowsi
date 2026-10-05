@@ -5,7 +5,7 @@ Conjugates Persian verbs in every tense, mood, voice and person. A port of [hazm
 ## Import
 
 ```ts
-import { conjugateVerb } from 'persian-kit/conjugation';
+import { conjugateVerb } from 'ferdowsi/conjugation';
 ```
 
 ## Usage

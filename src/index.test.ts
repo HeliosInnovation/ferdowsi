@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import * as root from './index';
 
 // Every directory in `src/modules` is a public module, exposed both at the root and as
-// `persian-kit/<module>`.
+// `ferdowsi/<module>`.
 const modules = readdirSync(new URL('./modules', import.meta.url), { withFileTypes: true })
   .filter((entry) => {
     return entry.isDirectory();

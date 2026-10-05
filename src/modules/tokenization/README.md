@@ -12,7 +12,7 @@ Unlike hazm's default `word_tokenize`, multi-part verbs are not joined, because 
 ## Import
 
 ```ts
-import { tokenizeWords } from 'persian-kit/tokenization';
+import { tokenizeWords } from 'ferdowsi/tokenization';
 ```
 
 ## Usage
