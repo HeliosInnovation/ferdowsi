@@ -1,8 +1,8 @@
 import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-  // Every `src/<module>/index.ts` becomes a public subpath export (`persian-kit/<module>`).
-  entry: ['src/index.ts', 'src/*/index.ts'],
+  // Every `src/modules/<module>/index.ts` becomes a public subpath export (`persian-kit/<module>`).
+  entry: ['src/index.ts', 'src/modules/*/index.ts'],
   format: ['esm', 'cjs'],
   platform: 'neutral',
   tsconfig: 'tsconfig.lib.json',

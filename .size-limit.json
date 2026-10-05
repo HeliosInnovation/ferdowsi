@@ -1,14 +1,32 @@
 [
   {
+    "name": "normalize only (tree-shaken)",
+    "path": "dist/index.mjs",
+    "import": "{ normalize }",
+    "limit": "2.5 kB"
+  },
+  {
+    "name": "removeDiacritics only (tree-shaken)",
+    "path": "dist/index.mjs",
+    "import": "{ removeDiacritics }",
+    "limit": "100 B"
+  },
+  {
+    "name": "tokenizeWords only (tree-shaken)",
+    "path": "dist/index.mjs",
+    "import": "{ tokenizeWords }",
+    "limit": "200 B"
+  },
+  {
+    "name": "conjugateVerb only (tree-shaken)",
+    "path": "dist/index.mjs",
+    "import": "{ conjugateVerb }",
+    "limit": "1 kB"
+  },
+  {
     "name": "Whole library (ESM)",
     "path": "dist/index.mjs",
     "import": "*",
-    "limit": "2 kB"
-  },
-  {
-    "name": "toPersianDigits only (tree-shaken)",
-    "path": "dist/index.mjs",
-    "import": "{ toPersianDigits }",
-    "limit": "250 B"
+    "limit": "4 kB"
   }
 ]

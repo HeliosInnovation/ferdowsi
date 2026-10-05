@@ -2,4 +2,4 @@
 'persian-kit': minor
 ---
 
-Initial release with the `digits` module: `toPersianDigits` converts English and Arabic-Indic digits to Persian, and `toEnglishDigits` converts Persian and Arabic-Indic digits to English.
+Initial release with TypeScript ports of hazm: the `normalization` module (`normalize` and each of its steps, with an option per step), `tokenization` and `conjugation`.

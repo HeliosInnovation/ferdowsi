@@ -13,16 +13,30 @@ pnpm add persian-kit
 # npm i persian-kit / yarn add persian-kit / bun add persian-kit
 ```
 
+## Modules
+
+Import from the root or from a module's own entry point. Both are tree-shakeable.
+
+| Module                                            | Import                      | What it does                                                  |
+| ------------------------------------------------- | --------------------------- | ------------------------------------------------------------- |
+| [normalization](src/modules/normalization#readme) | `persian-kit/normalization` | Normalize text: characters, spacing, ZWNJ, digits, diacritics |
+| [tokenization](src/modules/tokenization#readme)   | `persian-kit/tokenization`  | Split text into words and punctuation                         |
+| [conjugation](src/modules/conjugation#readme)     | `persian-kit/conjugation`   | Conjugate a verb in every tense                               |
+
+The modules are TypeScript ports of parts of [hazm](https://github.com/roshan-research/hazm) that need no word dictionary, with output identical to hazm's for those parts. Each module's README notes where it differs from hazm's defaults.
+
 ## Usage
 
 ```ts
-import { toEnglishDigits, toPersianDigits } from 'persian-kit';
-// or import only one module:
-import { toPersianDigits } from 'persian-kit/digits';
+import { normalize } from 'persian-kit/normalization';
 
-toPersianDigits('1403/01/15'); // '۱۴۰۳/۰۱/۱۵'
-toEnglishDigits('۰۹۱۲٣٤٥'); // '0912345' (Persian and Arabic-Indic digits)
+normalize('اِعلام کَرد : « زمین لرزه ای به بُزرگیِ 6 دهم ریشتر ...»');
+// → 'اعلام کرد: «زمین لرزه‌ای به بزرگی ۶ دهم ریشتر …»'
+
+normalize('ساعت 18', { persianNumbers: false }); // → 'ساعت 18'
 ```
+
+`normalize` is about 1.9 kB, and each step can be imported on its own. See each module's README for its options and output.
 
 ## Development
 
@@ -41,11 +55,28 @@ Requires Node 22+ and pnpm (`corepack enable`).
 | `pnpm validate`      | Everything above, in the same order CI runs it                |
 | `pnpm changeset`     | Describe your change for the next release                     |
 
+### Project layout
+
+```
+src/
+  constants/   shared constants (e.g. ZWNJ)
+  helpers/     shared, module-agnostic helpers
+  types/       shared types
+  modules/
+    <module>/
+      index.ts            public API (named exports only)
+      types.ts            the module's types
+      <module>.test.ts    one test file per module
+      README.md
+```
+
+Files and folders are kebab-case, functions are arrow functions with block bodies, and type imports and exports are kept separate from value ones (enforced by Biome).
+
 ### Adding a module
 
-1. Create `src/<module>/<module>.ts` with tests next to it in `src/<module>/<module>.test.ts`.
-2. Re-export it from `src/<module>/index.ts` and from `src/index.ts` (named exports only, no `export *`).
-3. Add a `./<module>` entry to `exports` in `package.json`, following the existing `./digits` entry.
+1. Create `src/modules/<module>/` with its code, `index.ts`, `<module>.test.ts` and `README.md`.
+2. Re-export it from `src/index.ts` (named exports only, no `export *`).
+3. Add a `./<module>` entry to `exports` in `package.json`, following the existing entries.
 4. Run `pnpm changeset`.
 
 `src/index.test.ts` fails if steps 2 or 3 are missed.

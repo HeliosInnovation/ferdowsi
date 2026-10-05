@@ -59,15 +59,25 @@
         "noParameterAssign": "error",
         "noUselessElse": "error",
         "useBlockStatements": "error",
+        "useConsistentArrowReturn": {
+          "level": "error",
+          "options": { "style": "always" }
+        },
         "useConsistentArrayType": {
           "level": "error",
           "options": { "syntax": "shorthand" }
         },
         "useConst": "error",
         "useExplicitLengthCheck": "error",
-        "useExportType": "error",
+        "useExportType": {
+          "level": "error",
+          "options": { "style": "separatedType" }
+        },
         "useForOf": "error",
-        "useImportType": "error",
+        "useImportType": {
+          "level": "error",
+          "options": { "style": "separatedType" }
+        },
         "useNamingConvention": "error",
         "useNodejsImportProtocol": "error",
         "useNumberNamespace": "error",

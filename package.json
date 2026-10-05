@@ -1,12 +1,15 @@
 {
   "name": "persian-kit",
   "version": "0.0.0",
-  "description": "Tree-shakeable, zero-dependency helpers for working with Persian (Farsi) text, numbers and more.",
+  "description": "Tree-shakeable, zero-dependency helpers for Persian (Farsi) text: hazm-compatible normalization, tokenization, verb conjugation and more.",
   "keywords": [
     "persian",
     "farsi",
     "iran",
-    "digits",
+    "normalization",
+    "normalizer",
+    "hazm",
+    "nlp",
     "i18n",
     "utils"
   ],
@@ -26,7 +29,8 @@
   "type": "module",
   "sideEffects": false,
   "files": [
-    "dist"
+    "dist",
+    "THIRD_PARTY_NOTICES.md"
   ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -42,14 +46,34 @@
         "default": "./dist/index.cjs"
       }
     },
-    "./digits": {
+    "./normalization": {
       "import": {
-        "types": "./dist/digits/index.d.mts",
-        "default": "./dist/digits/index.mjs"
+        "types": "./dist/modules/normalization/index.d.mts",
+        "default": "./dist/modules/normalization/index.mjs"
       },
       "require": {
-        "types": "./dist/digits/index.d.cts",
-        "default": "./dist/digits/index.cjs"
+        "types": "./dist/modules/normalization/index.d.cts",
+        "default": "./dist/modules/normalization/index.cjs"
+      }
+    },
+    "./tokenization": {
+      "import": {
+        "types": "./dist/modules/tokenization/index.d.mts",
+        "default": "./dist/modules/tokenization/index.mjs"
+      },
+      "require": {
+        "types": "./dist/modules/tokenization/index.d.cts",
+        "default": "./dist/modules/tokenization/index.cjs"
+      }
+    },
+    "./conjugation": {
+      "import": {
+        "types": "./dist/modules/conjugation/index.d.mts",
+        "default": "./dist/modules/conjugation/index.mjs"
+      },
+      "require": {
+        "types": "./dist/modules/conjugation/index.d.cts",
+        "default": "./dist/modules/conjugation/index.cjs"
       }
     },
     "./package.json": "./package.json"
