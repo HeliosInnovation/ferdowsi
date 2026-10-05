@@ -1,0 +1,6 @@
+# Prettier only formats Markdown and YAML; Biome owns TS/JS/JSON.
+dist
+coverage
+node_modules
+pnpm-lock.yaml
+CHANGELOG.md

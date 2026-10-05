@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Whole library (ESM)",
+    "path": "dist/index.mjs",
+    "import": "*",
+    "limit": "2 kB"
+  },
+  {
+    "name": "toPersianDigits only (tree-shaken)",
+    "path": "dist/index.mjs",
+    "import": "{ toPersianDigits }",
+    "limit": "250 B"
+  }
+]

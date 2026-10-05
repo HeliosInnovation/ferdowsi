@@ -1,0 +1,3 @@
+# pnpm 11 reads its settings from here; .npmrc is only for registry/auth.
+saveExact: true
+updateNotifier: false

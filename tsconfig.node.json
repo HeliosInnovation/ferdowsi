@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "types": ["node"]
+  },
+  // Tests and tooling configs run on Node only.
+  "include": ["src/**/*.test.ts", "*.config.ts"]
+}
