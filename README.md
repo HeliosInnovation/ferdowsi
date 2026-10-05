@@ -85,8 +85,10 @@ Files and folders are kebab-case, functions are arrow functions with block bodie
 
 Merging to `main` runs `.github/workflows/release.yml`, which needs this one-time setup in the GitHub repo:
 
-- `NPM_TOKEN` secret: an npm automation token with publish rights to `persian-kit`.
-- A GitHub App installed on the repo with _Contents_ and _Pull requests_ read/write. Store its ID in the `RELEASE_APP_ID` variable and its private key in the `RELEASE_APP_PRIVATE_KEY` secret. The release PR is opened with this app's token so that CI runs on it.
+- `NPM_TOKEN` secret: an npm granular access token with read and write access to `persian-kit` and _Bypass two-factor authentication_ enabled.
+- _Settings → Actions → General → Workflow permissions_: allow GitHub Actions to create and approve pull requests, so the workflow can open the release PR.
+
+The release PR is opened with the built-in `GITHUB_TOKEN`, so CI doesn't run on it; it only changes the version and changelog of commits that already passed CI on `main`.
 
 Dependencies are pinned to exact versions (`saveExact` in `pnpm-workspace.yaml`).
 
