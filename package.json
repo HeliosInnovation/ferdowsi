@@ -1,6 +1,6 @@
 {
   "name": "persian-kit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Tree-shakeable, zero-dependency helpers for Persian (Farsi) text: hazm-compatible normalization, tokenization, verb conjugation and more.",
   "keywords": [
     "persian",
